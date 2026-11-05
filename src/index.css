@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Custom Board exam typography */
+.font-serif {
+  font-family: 'Tinos', 'Times New Roman', 'Liberation Serif', serif;
+}
+
+.font-sans-header {
+  font-family: 'Inter', 'Liberation Sans', sans-serif;
+}
+
+/* Indeterminate animation for progress bar */
+@keyframes indeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.animate-indeterminate {
+  animation: indeterminate 1.5s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+}
+
+/* Print Stylesheet for Authentic CBSE Board Examination Papers */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 18mm 20mm 18mm 20mm;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-family: 'Tinos', 'Times New Roman', serif !important;
+    font-size: 12pt !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Prevent awkward page breaks in the middle of a question */
+  .grid, .border-b {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .page-break-before {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  /* Hide navigation, top bars, buttons */
+  header, button, .print\:hidden {
+    display: none !important;
+  }
+}

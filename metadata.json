@@ -1,0 +1,6 @@
+{
+  "name": "BoardReady 10 - CBSE Class 10 Question & Paper Generator",
+  "description": "Production-grade CBSE Class 10 practice question and full 80-mark sample paper generator with syllabus fidelity, multi-step verification, and authentic board-style PDFs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
